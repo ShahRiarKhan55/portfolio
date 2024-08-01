@@ -115,7 +115,6 @@ export const InfiniteMovingCards = ({
                     src={item.img}
                     width="80"
                     height="80"
-                    viewBox="0 0 50 50"
                     fill="none"
                     alt="profile"
                   />
