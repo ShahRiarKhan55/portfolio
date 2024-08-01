@@ -27,6 +27,15 @@ type Position = {
   color: string;
 };
 
+type GlobalData = {
+  size: number;
+  order: number;
+  // eslint-disable-next-line no-unused-vars
+  color: (t: number) => string;
+  lat: number;
+  lng: number;
+};
+
 export type GlobeConfig = {
   pointSize?: number;
   globeColor?: string;
