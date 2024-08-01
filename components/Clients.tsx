@@ -32,7 +32,7 @@ const Clients = () => {
                   alt={company.name}
                   className="md:w-10 w-5"
                 /> */}
-                <Image
+                <img
                   src={company.nameImg}
                   alt={company.name}
                   width={company.id === 2 || company.id === 3 ? 100 : 150}
