@@ -1,5 +1,3 @@
-import { link } from "fs";
-
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -116,7 +114,7 @@ export const testimonials = [
 export const companies = [
   {
     id: 1,
-    name: "Enguneer Hut",
+    name: "Engineer Hut",
     img: "/02-removebg-preview.png",
     nameImg: "/02-removebg-preview.png",
   },

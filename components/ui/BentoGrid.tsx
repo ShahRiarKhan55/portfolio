@@ -7,7 +7,6 @@ import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 import Image from "next/image";
-import { fill } from "three/src/extras/TextureUtils.js";
 
 // lottie-web touches `document` on import, which breaks prerendering.
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
