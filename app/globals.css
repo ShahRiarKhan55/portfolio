@@ -83,3 +83,105 @@
     @apply font-bold text-4xl md:text-5xl text-center;
   }
 }
+
+/* ==========================================================================
+   Design tokens (Phase 0 foundation)
+   Prefixed `--ds-` so they cannot collide with the legacy shadcn variables
+   above. Nothing consumes them yet; components migrate in Phase 1.
+   Documented in docs/design-system.md (including contrast results).
+   ========================================================================== */
+@layer base {
+  :root {
+    /* Primitives: obsidian neutral ramp */
+    --ds-obsidian-950: #07080a;
+    --ds-obsidian-900: #0b0c0f;
+    --ds-obsidian-850: #101216;
+    --ds-obsidian-700: #1e2127;
+    --ds-obsidian-600: #2a2e36;
+    --ds-obsidian-500: #3a3f49;
+    --ds-obsidian-400: #5b6270;
+    --ds-obsidian-300: #8a91a0;
+    --ds-obsidian-200: #b6bbc7;
+    --ds-obsidian-100: #dde0e7;
+    --ds-obsidian-50: #f2f3f6;
+    --ds-paper: #fafafb;
+    --ds-white: #ffffff;
+
+    /* Primitives: restrained electric blue */
+    --ds-blue-300: #9dbbff;
+    --ds-blue-400: #6b9bff;
+    --ds-blue-500: #3d7bff;
+    --ds-blue-600: #2a62e6;
+    --ds-blue-700: #1f4bb8;
+
+    /* Semantic: light theme (default `:root`) */
+    --ds-color-bg: var(--ds-paper);
+    --ds-color-surface: var(--ds-white);
+    --ds-color-surface-raised: var(--ds-white);
+    --ds-color-text: var(--ds-obsidian-900);
+    --ds-color-text-muted: var(--ds-obsidian-400);
+    --ds-color-border: var(--ds-obsidian-200);
+    --ds-color-border-strong: var(--ds-obsidian-400);
+    --ds-color-accent: var(--ds-blue-600);
+    --ds-color-accent-solid: var(--ds-blue-600);
+    --ds-color-accent-contrast: var(--ds-white);
+    --ds-color-focus-ring: var(--ds-blue-600);
+
+    /* Typography slots (families are chosen in Phase 1 via next/font) */
+    --ds-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --ds-font-display: var(--ds-font-sans);
+    --ds-font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+    /* Fluid type scale (~1.25 ratio) */
+    --ds-text-xs: clamp(0.75rem, 0.73rem + 0.1vw, 0.8125rem);
+    --ds-text-sm: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
+    --ds-text-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --ds-text-lg: clamp(1.125rem, 1.07rem + 0.28vw, 1.3125rem);
+    --ds-text-xl: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);
+    --ds-text-2xl: clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem);
+    --ds-text-3xl: clamp(2.25rem, 1.8rem + 2.2vw, 3.75rem);
+    --ds-text-display: clamp(2.75rem, 2rem + 4vw, 6rem);
+
+    /* Radii */
+    --ds-radius-sm: 0.375rem;
+    --ds-radius-md: 0.75rem;
+    --ds-radius-lg: 1.25rem;
+
+    /* Layering (replaces ad hoc z-[60] / z-[5000]) */
+    --ds-z-base: 0;
+    --ds-z-raised: 10;
+    --ds-z-nav: 100;
+    --ds-z-overlay: 200;
+    --ds-z-toast: 300;
+
+    /* Motion */
+    --ds-duration-fast: 120ms;
+    --ds-duration-base: 200ms;
+    --ds-duration-slow: 400ms;
+    --ds-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ds-ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark {
+    --ds-color-bg: var(--ds-obsidian-950);
+    --ds-color-surface: var(--ds-obsidian-900);
+    --ds-color-surface-raised: var(--ds-obsidian-850);
+    --ds-color-text: var(--ds-obsidian-50);
+    --ds-color-text-muted: var(--ds-obsidian-200);
+    --ds-color-border: var(--ds-obsidian-700);
+    --ds-color-border-strong: var(--ds-obsidian-400);
+    --ds-color-accent: var(--ds-blue-400);
+    --ds-color-accent-solid: var(--ds-blue-600);
+    --ds-color-accent-contrast: var(--ds-white);
+    --ds-color-focus-ring: var(--ds-blue-400);
+  }
+
+  /* Duration tokens collapse for users who ask for reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --ds-duration-fast: 0.01ms;
+      --ds-duration-base: 0.01ms;
+      --ds-duration-slow: 0.01ms;
+    }
+  }
+}

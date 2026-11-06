@@ -26,7 +26,41 @@ const config = {
       },
     },
     extend: {
+      // Design-system tokens (additive; see docs/design-system.md)
+      zIndex: {
+        "ds-raised": "var(--ds-z-raised)",
+        "ds-nav": "var(--ds-z-nav)",
+        "ds-overlay": "var(--ds-z-overlay)",
+        "ds-toast": "var(--ds-z-toast)",
+      },
+      transitionDuration: {
+        "ds-fast": "var(--ds-duration-fast)",
+        "ds-base": "var(--ds-duration-base)",
+        "ds-slow": "var(--ds-duration-slow)",
+      },
+      transitionTimingFunction: {
+        "ds-standard": "var(--ds-ease-standard)",
+        "ds-emphasized": "var(--ds-ease-emphasized)",
+      },
+      fontFamily: {
+        "ds-sans": "var(--ds-font-sans)",
+        "ds-display": "var(--ds-font-display)",
+        "ds-mono": "var(--ds-font-mono)",
+      },
       colors: {
+        ds: {
+          bg: "var(--ds-color-bg)",
+          surface: "var(--ds-color-surface)",
+          "surface-raised": "var(--ds-color-surface-raised)",
+          text: "var(--ds-color-text)",
+          "text-muted": "var(--ds-color-text-muted)",
+          border: "var(--ds-color-border)",
+          "border-strong": "var(--ds-color-border-strong)",
+          accent: "var(--ds-color-accent)",
+          "accent-solid": "var(--ds-color-accent-solid)",
+          "accent-contrast": "var(--ds-color-accent-contrast)",
+          "focus-ring": "var(--ds-color-focus-ring)",
+        },
         black: {
           DEFAULT: "#000",
           100: "#000319",
@@ -80,6 +114,9 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "ds-sm": "var(--ds-radius-sm)",
+        "ds-md": "var(--ds-radius-md)",
+        "ds-lg": "var(--ds-radius-lg)",
       },
       keyframes: {
         "accordion-down": {
